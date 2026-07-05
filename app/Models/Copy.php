@@ -8,11 +8,17 @@ use App\Models\Borrowing;
 
 class Copy extends Model
 {
-    public function book(){
+
+
+    protected $fillable = ['book_id', 'copy_number', 'status'];
+
+    public function book()
+    {
         return $this->belongsTo(Book::class);
     }
 
-    public function borrowings(){
+    public function borrowings()
+    {
         return $this->hasMany(Borrowing::class);
     }
 }

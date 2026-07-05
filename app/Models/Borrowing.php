@@ -8,11 +8,16 @@ use App\Models\User;
 
 class Borrowing extends Model
 {
-    public function copy(){
+
+    protected $fillable = ['user_id', 'copy_id', 'borrow_date', 'due_date', 'return_date'];
+
+    public function copy()
+    {
         return $this->belongsTo(Copy::class);
     }
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }
